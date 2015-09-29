@@ -1,0 +1,26 @@
+{{input
+  type="text"
+  value=text
+  key-up=(action updateText)
+  autocomplete='off'}}
+<br>
+
+
+{{#e3-container type='svg' height=400 width=800 as |stage meta|}}
+
+  {{#each characters key='character' as |char|}}
+
+    {{e3-shape/rectangle stage
+      x=50
+      y=100
+      height=char.total
+      width=char.total
+      fill='red'
+    }}
+
+  {{/each}}
+
+{{/e3-container}}
+
+
+

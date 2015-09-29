@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"61e2f91637","applicationID":"349946","transactionName":"dAxbFxYNWlpXRBxEEFUPXABLAVlYRlNdQEpUBUU=","queueTime":0,"applicationTime":206,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-741.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UAIPV15ACwcJXVVU"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),u=c.length,f=i(a,o,r),d=0;u>d;d++)c[d].apply(f,n);return f}function a(t,e){u[t]=s(t).concat(e)}function s(t){return u[t]||[]}function c(){return n(e)}var u={};return{on:a,emit:e,create:c,listeners:s,_events:u}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:20,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(u){try{r("ierr",[u,(new Date).getTime(),!0])}catch(f){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(3),window.onerror=e;try{throw new Error}catch(u){"stack"in u&&(t(4),t(5),"addEventListener"in window&&t(1),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(2),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:8,3:3,4:7,5:6,6:21,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=t("ee").create(),i=t(1)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:22,ee:"QJf3ax",gos:"7eSDFh"}],6:[function(t,e){var n=t("ee").create(),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:22,ee:"QJf3ax"}],7:[function(t,e){function n(t,e,n){t[0]=o(t[0],"fn-",null,n)}var r=t("ee").create(),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:22,ee:"QJf3ax"}],8:[function(t,e){function n(){u.inPlace(this,p,"fn-")}function r(t,e){u.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),u=c(a),f=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),f.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,u.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:5,2:22,ee:"QJf3ax"}],9:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,u="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=n(u);if(f&&(r.rxSize=f),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,u=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var u=n(o);u&&(r.txSize=u)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var f=0;c>f;f++)e.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:10,3:8,4:5,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],10:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],11:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:20,2:21,handle:"D5DuLP"}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):void(r.q&&(r.q[t]||(r.q[t]=[]),r.q[t].push(e)))}var r=t("ee").create();e.exports=n,n.ee=r,r.q={}},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=u.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===f.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=u.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=window,u=c.document;t(2);var f=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-741.min.js"},p=e.exports={offset:i(),origin:f,features:{}};u.addEventListener?(u.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(u.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:20,2:11,handle:"D5DuLP"}],20:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],21:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],22:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,u;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){f([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return u=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,u],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,u(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,u="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,u?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){f([o,e,n,r])}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){f([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function f(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:21,ee:"QJf3ax"}]},{},["G9z0Bl",4,9]);</script>
+	<!-- L:S content/theme/html_system_head  (0) -->
+	<!-- load web fonts -->
+
+<script type="text/javascript">
+  (function() {
+    document.getElementsByTagName("html")[0].setAttribute("class","wf-loading")
+    document.getElementsByTagName("html")[0].setAttribute("className","wf-loading") // for IE
+    var config = {
+      kitId: 'bmj2nsh',
+      scriptTimeout: 3000
+    };
+    var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//fonts.oreillystatic.com/'+config.kitId+'.js';tk.type="text/javascript";tk.async="false";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+  })();
+</script>
+<style>
+.wf-loading .typewriter {
+  font-family: Courier New;
+  color: rgba(0, 0, 0, 0); 
+}
+
+.wf-loading body, p, ol, ul, td { 
+  font-family: Arial, Verdana, Helvetica, sans-serif; 
+}
+ 
+.wf-active .typewriter {
+  font-family: 'oreilly-urw-typewriter-narro', Courier New;
+}
+
+.wf-active body, p, ol, ul, td { 
+  font-family: 'open-sans', Arial, Verdana, Helvetica, sans-serif;
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  	
+
+	<!-- controller_js -->
+	<script src="//cdn.oreillystatic.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<script src="/javascripts/application.js?1442249778" type="text/javascript"></script>
+<script src="//cdn.oreillystatic.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js" type="text/javascript"></script>
+<script src="//cdn.oreillystatic.com/en/assets/1/eventprovider/1/jquery_star_rating_pack.js?03" type="text/javascript"></script>
+<script src="//cdn.oreillystatic.com/en/assets/1/eventprovider/1/jquery.form.min.js" type="text/javascript"></script>
+<script src="/javascripts/coinbase-registration.js?1442249778" type="text/javascript"></script>
+	<!-- extra_external_javascript -->
+	
+	<!-- extra_styles -->
+  <link href="//cdn.oreillystatic.com/en/assets/1/eventprovider/1/jquery.rating-3.14.css" media="screen" rel="stylesheet" type="text/css" />
+	<!-- extra_javascript -->
+		
+	<!-- theme_external_javascript -->
+	
+
+
+
+  <style>
+  .en_eval_link { vertical-align:top; }
+  </style>
+
+	<!-- L:E content/theme/html_system_head  (0) -->
+	<!-- L:S content/theme/html_head  (0) -->
+	<title>
+
+
+    
+    
+    
+    
+    
+Fluent 2016 Call for Participation: JavaScript, HTML5, CSS3 Conference - O'Reilly Fluent, March 08 - 10, 2016, San Francisco, CA
+
+</title>
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- content/head_extra -->
+<style>
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.grid {
+  margin-right:-20px;
+}
+.grid:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+[class*='col-'] {
+  float: left;
+  padding-right: 20px;
+}
+[class*='col-']:last-of-type {
+  float: left;
+}
+
+.col-1-2 { width: 50%; }
+.col-1-3 { width: 33.33%; }
+.col-2-3 { width: 66.66%; }
+.col-1-4 { width: 25%; }
+.col-3-4 { width: 75%; }
+.col-1-5 { width: 20%; }
+.col-2-5 { width: 40%; }
+.col-3-5 { width: 60%; }
+.col-4-5 { width: 80%; }
+.col-1-6 { width: 16.66%; }
+.col-5-6 { width: 83.33%; }
+.col-1-8 { width: 12.5%; }
+.col-3-8 { width: 37.5%; }
+.col-5-8 { width: 62.5%; }
+.col-7-8 { width: 87.5%; }
+
+@media screen and (max-width:680px) {
+  .mobile-stack [class*='col-'] { width: 100% !important; }
+}
+
+@media screen and (max-width:400px) {
+  .mobile-stack-xs [class*='col-'] { width: 100% !important; }
+}
+</style>
+<style>
+/* global styles */
+html { font-size: 62.5%; color: #222; }
+h1 { font-size: 27px; font-size: 2.7rem; }
+h2 { font-size: 23px; font-size: 2.3rem; }
+h3 { font-size: 19px; font-size: 1.9rem; }
+h1, h2, h3 { font-weight: normal; }
+h4, p, li { font-size: 15px; font-size: 1.5rem; }
+li { line-height: 23px; line-height: 2.3rem; }
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+#en_content, #en_main { width: 100%; margin: 0px; padding: 0px; }
+#en_main_parts { width: 100%; }
+.left { float: left; }
+.right { float: right; }
+/* clearfix */
+.en_clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+
+/* Rails error styles */
+.fieldWithErrors { border: 2px solid red; display: table; }
+div.en_grade_buttons .fieldWithErrors { border: 0; display: none; }
+div.ErrorExplanation { width: 400px; width: 40rem; border: 2px solid red; padding: 7px 12px 7px 7px; padding: 0.7rem 1.2rem 0.7rem 0.7rem; margin-bottom: 20px; margin-bottom: 2rem; background-color: #f0f0f0; }
+div.ErrorExplanation h2 { text-align: left; font-weight: bold; padding: 5px 5px 5px 15px; padding: 0.5rem 0.5rem 0.5rem 1.5rem; font-size: 12px; font-size: 1.2rem; margin: -7px 0 -7px -7px; margin: -0.7rem 0 -0.7rem -0.7rem; background-color: #c00; color: #fff; }
+div.errorExplanation p { color: #333; margin-bottom: 0; padding: 5px; padding: 0.5rem; }
+div.errorExplanation ul { margin-bottom: 15px; margin-bottom: 1.5rem; }
+div.errorExplanation ul li { line-height: 27px; line-height: 2.7rem; list-style: square; }
+/* flash and error reporting */
+div.en_additional_notice { background-color: #efefef; border: 1px solid #f7f7f7; padding: 5px; padding: 0.5rem; margin-bottom: 15px; margin-bottom: 1.5rem; }
+div.en_notice { background-color: #FFFFCC; border: 1px dotted #FFCC33; color: #ddaa33; padding: 5px; padding: 0.5rem; margin-bottom: 10px; margin-bottom: 1rem; }
+div.en_error { background-color: #FFCCBF; border: 1px dotted #FF3300; color: #FF3300; padding: 5px; padding: 0.5rem; margin-bottom: 10px; margin-bottom: 1rem; }
+div.en_liquid_error { border: 2px solid #484; background: #ffe; padding: 0 10px 10px 10px; padding: 0 1rem 1rem 1rem; font-family: sans-serif; }
+div.en_liquid_error p, div.en_liquid_error h3 { font-family: sans-serif; }
+
+/* For Google Remarketing Tag */
+.remarketing { position:absolute; top:-9999px; left:-9999px; }
+</style>
+
+
+
+<style>
+/* Clearfix */
+.clearfix:before, .clearfix:after { content: " "; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+
+/* Basic Styles */
+#sitenav { z-index: 100; position: relative; }
+#navbar { background: transparent; }
+#navbar img { display:none; }
+.last { border-right: none; }
+
+nav { width: 100%; position: relative; border-bottom: none;  }
+nav ul { padding: 0; margin: 0; height: 30px; height: 3rem; }
+nav li { display: inline; float: left; }
+nav a { color: #fff; display: inline-block; font-size: 16px; font-size: 1.6rem; text-align: center; text-decoration: none; line-height: 20px; line-height: 2rem; }
+nav li a { border-right: 1px solid #8C8C8C; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; padding: 0 20px; }
+nav li:first-child { margin-left: -20px; margin-left: -2rem; }
+nav li:last-child a { border-right: none; }
+nav a:hover, nav a:active { background-color: #00b7b7; text-decoration: none; color: #fff; }
+nav a#pull, #date_location_mobile { display: none; }
+
+body { background-color: #FFF; color: rgb(0, 0, 0); margin: 0px; -webkit-text-size-adjust: none;  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.en_notice { display: none; }
+#en_content, #en_main { width: 100%; margin: 0px; padding: 0px;  }
+#en_main_parts { width: 100%; }
+#nav_overlay { position: absolute; z-index: 80; top: 0; left: 0; width: 100%; height: 100%; /*background: rgba(0,0,0,0.4); background: none\9; */}
+
+
+#en_main { width: 100%; margin: 0 auto; padding: 0 20px 20px; max-width: 910px; }
+
+
+.sold_out {background-color: #00b7b7; padding: 2px 4px 2px; font-size: 11.05px; font-weight: bold; color: #FFF; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; width: 65px; float: right; margin: 2px 2px 2px; }
+.en_detail_tools .sold_out {float: left; }
+
+.btn-yellow {display:block; text-decoration:none; font-size:20px; font-size: 2rem; line-height:22px; line-height:2.2rem; color:#000; padding:8px 0; padding:0.8rem 0; text-align:center;  -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; background: #b25000;  background: -moz-linear-gradient(top, rgb(254,196,26) 0%, rgb(255,170,0) 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(254,196,26)), color-stop(100%,rgb(255,170,0))); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, rgb(254,196,26) 0%,rgb(255,170,0) 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, rgb(254,196,26) 0%,rgb(255,170,0)  100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top, rgb(254,196,26) 0%,rgb(255,170,0)  100%); /* IE10+ */ background: linear-gradient(to bottom, rgb(254,196,26) 0%,rgb(255,170,0) 100%); /* W3C */ -webkit-box-shadow:  0px 1px 2px 0px rgba(0, 0, 0, .4); box-shadow:  0px 1px 2px 0px rgba(0, 0, 0, .4); }
+a.btn-yellow:hover {text-decoration:none;}
+
+/*.cta { margin: 0 0 10px 10px; margin: 0 0 1rem 1rem; padding: 10px; }*/
+
+.cta { margin: 0 0 10px 10px; margin: 0 0 1rem 1rem; padding: 10px 30px; padding: 1rem 3rem; }
+
+/* Styles for CTA with countdown timer */
+#countdown_cta { max-width: 380px; z-index: 11; width: 380px; width: 38rem; font-size: 23px; }
+.countdown_ticker { font-size: 16px; margin-top: 10px; display: block; }
+
+#en_header { margin-left: 0px; padding-left: 0px; background-color: #000; max-height: none; }
+.tagline_date_location { color: #fff; }
+
+.branding_bar { background-color: #00b7b7; width: 100%; position: relative; z-index: 2; }
+.content_row { max-width: 910px; width: 100%; margin: 0px auto; padding: 0 20px; }
+#logo { padding: 8px 0; max-width: 129px; }
+
+#inside_header.row { padding: 20px 0;border-bottom: 0;  }
+.event_logo { float:left; position: relative; z-index: 2; }
+.tagline_date_location { font-weight: normal; font-size: 15px; font-size: 1.5rem; line-height: 20px; line-height: 2rem; text-transform: uppercase; float:left; letter-spacing: .08rem; padding-left: 60px; position: relative; z-index: 2; padding-top: 0; margin-top:-1px; }
+
+div.tagline { color: #00b7b7; text-transform: uppercase; font-weight: bold; padding-bottom: 0; }
+
+a {text-decoration: none; color: #1010dd; }
+a:hover {text-decoration: underline; }
+.hide { display: none; }
+
+#newsletter_widget { background: #00B7B7; width: 100%; min-height: 100px; margin: 0; overflow: auto; color: #fff; text-align: center; }
+#newsletter_widget .content_row { padding: 40px 20px 50px 20px; }
+#newsletter_widget h2 { color: #fff; font-size: 34px; font-size: 3.4rem; line-height:38px; line-height:3.8rem; margin: 0  auto 10px; padding: 0; }
+#newsletter_widget p { font-size: 22px; font-size: 2.2rem;  margin: 0 auto; padding: 0 0 10px 0; max-width: 609px;  }
+
+.heading-img { margin:20px 0 20px; margin:2rem 0 2rem; }
+
+#copyright {font-size: 14px; font-size: 1.4rem; padding: 20px 0; background: #222; color: #fff; }
+#copyright a { color: #fff; }
+
+.social li a img { max-width: 32px; display: inline-block; vertical-align: middle; margin-right: 10px; }
+#en_footer .social li { line-height: 45px; line-height: 4.5rem; }
+
+/* blog styles */
+.en_blog_author_photo {float: left; margin: 0 10px 5px 0;}
+.en_blog_author_name, .en_blog_author_twitter, .en_blog_metadata { font-size: 14px; font-size: 1.4rem; line-height: 18px; line-height: 1.8rem; }
+.en_article_share { overflow: hidden; margin: 10px 0; }
+.en_blog_body {  }
+.en_blog_body, .en_blog_body p { font-size: 16px; font-size: 1.6rem; line-height: 24px; line-height: 2.4rem; }
+.kaltura-video-wrapper { position:relative; width:100%; height:33px; padding-bottom:56.25%; }
+.kaltura-video-wrapper img.kWidgetCentered { position:absolute; width:100%; height:100%; }
+
+
+
+h1, h2, h3 { color: #00b7b7; }
+h1 { margin-bottom: 20px; margin-bottom: 2rem; line-height: 30px; line-height: 3rem; }
+h2 { margin: 15px 0; margin: 1.5rem 0; line-height: 30px; line-height: 3rem; }
+h3 { margin-bottom: 10px; margin-bottom: 1rem; }
+h4 { margin-top: 10px; margin-top: 1rem; }
+ul li { list-style-image: url('//cdn.oreillystatic.com/en/assets/1/event/93/fluent2013_bullet.gif'); word-wrap: break-word; }
+
+
+
+
+
+
+
+
+
+
+/* for sponsor, exhibitor, and speaker banners */
+
+
+
+
+
+
+
+
+
+@-ms-viewport {
+	width: device-width;
+}
+
+
+@media only screen and (max-width: 885px) {
+   .mobile-stack-cfp [class*='col-'] { width: 100% !important; }
+}
+
+
+@media only screen and (max-width: 820px) {
+   #widgets_row.row #stay_informed #photos { display: none; }
+}
+
+@media only screen and (max-width: 827px) {
+   #inside_header.row, #home_quote { display: none; } 
+   #date_location_mobile { display: block; max-width:300px; text-transform: uppercase; line-height: 20px; line-height:2rem; padding-bottom:0; padding-top: 15px; color:#fff; text-indent: 0; font-size: 15px; font-size: 1.5rem;  }
+  .mobile_tagline { display: block; font-weight:bold; color: #00b7b7; font-size: 15px; font-size: 1.5rem; padding-bottom: 0px; }
+  .mobile-hide { display: none; }
+
+    /* nav styles */
+    #navbar {  border-bottom: 1px solid #8c8c8c; }
+    #sitenav > .content_row { padding: 0; }
+    .last { border-right: 1px solid #8C8C8C; border-bottom: none; }
+    nav { padding-top: 0; }
+    nav ul { width: 100%; display: block; height: 40px; height: 4rem; background: #333; margin-left: 0; position: absolute; border-top: 1px solid #8c8c8c; }
+    nav li { width: 50%; float: left; position: relative; }
+    nav li:first-child { margin-left: 0; }
+    nav li:last-child a { border-right: 1px solid #8C8C8C; }
+    nav li a { border-bottom: 1px solid #8C8C8C; border-right: 1px solid #8C8C8C; padding: 0; color: #fff; }
+    nav li:nth-child(even) a { border-right: none; } 
+   
+    nav a { text-align: left; width: 100%; text-indent: 25px; text-indent: 2.5rem; line-height: 40px; line-height: 4rem; }
+    nav { border-bottom: 0;  }
+    nav ul { height: auto; display: none; }
+
+    .cta_row.row { background: #fff; border-bottom: none; padding: 10px 0; }
+    #small-reg-button { width: 50%; margin: 0 auto; }
+
+     nav a#pull { display: block; background: #000 url('//cdn.oreillystatic.com/en/assets/1/eventprovider/1/gray_menu_icon.png') 40px 40px no-repeat; width: 100px; height: 100%; position: absolute; top: 0; right: 0;  }
+nav > a, nav > a:hover { background: #000; }
+
+
+    #navbar > nav > a:first-child { padding: 20px 0 10px 20px; width: 85%; } 
+
+     #navbar img { display: block;   }
+     .right { float: none; }
+}
+
+@media only screen and (max-width: 400px) {
+   #date_location_mobile { max-width:300px; }
+  .mobile_tagline { font-size: 20px; font-size: 2rem; }
+}
+
+
+</style>
+
+   
+
+   
+
+   
+
+   
+
+    
+
+    
+
+
+
+  
+
+<style>
+#reasons_row.row { background: #fff; padding:1.6em 0 3.1em 0;}
+#reasons_row.row p, #reasons_row.row li { padding: 0; font-size: 17px; font-size: 1.7rem; line-height: 25px; line-height: 2.5rem; }
+#reasons_row.row h2 { padding: 0; color: #00b7b7; }
+#reasons_row.row h3 { margin-bottom: 0; }
+#reasons_row.row ul { padding: 0 1.5em 0.8em 1.3em; margin: 0; }
+#reasons_row.row ul li { list-style-image: url('//cdn.oreillystatic.com/en/assets/1/event/93/fluent2013_bullet.gif'); margin: 0 0 15px 0; margin: 0 0 1.5rem 0; padding: 0; }
+#reasons_row.row ol li { margin: 0 0 15px 0; margin: 0 0 1.5rem 0; padding: 0; }
+#rightcol { float: right; width: 227px; width: 22.7rem; padding: 0 0 0 12px; padding: 0 0 0 1.2rem; margin-top: -12px; margin-top: -1.2rem; }
+#reasons_row.row .quote { color: #00b7b7; font-size: 20px; font-size: 2rem; line-height: 25px; line-height: 2.5rem; background: white url('//cdn.oreillystatic.com/en/assets/1/eventprovider/1/background_quote.gif') left top no-repeat; margin: 0; padding-top: 10px; padding-top: 1rem; }
+#reasons_row.row .attribution { color: #000; font-size: 14px; font-size: 1.4rem; line-height: 17px; line-height: 1.7rem; margin-top: 0; }
+
+
+#stay_informed h2 {font-size: 20px; font-size: 2rem; margin-bottom: 10px; }
+#widgets_row.row {background: #000; border-bottom: none; padding: 40px 0; }
+#widgets_row.row h2 {color: #00b7b7; font-size: 20px; font-size: 2rem; line-height: 23px;line-height: 2.3rem; font-weight: normal; margin: 0 0 10px 0; }
+#widgets_row p {color: #eee; margin: 0 0 10px 0; }
+
+#widgets_row.row #stay_informed a {color: #fff;}
+
+#widgets_row.row #stay_informed #photos {width: 100%; border-top: 2px solid #433d3f; margin-top: 10px; padding-top: 15px; }
+#widgets_row.row #stay_informed #photos>div {width: 100%; }
+#widgets_row.row #stay_informed #photos div.flickr_group {float: left; margin: 0 0 10px 6px; padding: 1px; border: 1px solid #aaa; width: 78px; }
+#widgets_row.row #stay_informed #photos>div>div:first-child {margin-left: 0; }
+#widgets_row.row #stay_informed #photos div.flickr_group a {text-decoration: none; }
+div.stay_connected {margin: 20px 0;}
+div.stay_connected a.chicklet {border: 0 none; display: inline-block; width: 29px; height: 18px; }
+div.stay_connected a.chicklet-twitter {background-position: 0 0; }
+div.stay_connected a.chicklet-facebook {background-position: 0 -20px; }
+div.stay_connected a.chicklet-gplus {background-position: 0 -40px; }
+div.stay_connected a.chicklet-linkedin {background-position: 0 -60px; }
+div.stay_connected a.chicklet-lanyrd {background-position: 0 -100px; }
+div.stay_connected a.chicklet-slideshare {background-position: 0 -120px; }
+div.stay_connected a.chicklet-schedule {background-position: 0 -140px; }
+div.stay_connected a.chicklet-directory {background-position: 0 -160px; }
+#sponsors_contacts.row {background: #f6f6f6; border-bottom: none; padding: 0; }
+#sponsor_container {background: #fff;  margin: auto; }
+/*#sponsor_title {background: #cacaca url('//cdn.oreillystatic.com/en/assets/1/eventprovider/1/sponsors_vertical.gif') 97% center no-repeat; width: 50%; height: 400px; float: left; margin-left: -50%; position: absolute; } */
+#sponsors_contacts.row div.big_sponsor_level {background: #b0b0b0; background: -moz-linear-gradient(left,#fff 0,#b0b0b0 50%,#fff 100%); background: -webkit-gradient(linear,left top,right top,color-stop(0%,#fff),color-stop(50%,#b0b0b0),color-stop(100%,#fff)); background: -webkit-linear-gradient(left,#fff 0,#b0b0b0 50%,#fff 100%); background: -o-linear-gradient(left,#fff 0,#b0b0b0 50%,#fff 100%); background: -ms-linear-gradient(left,#fff 0,#b0b0b0 50%,#fff 100%); background: linear-gradient(to right,#fff 0,#b0b0b0 50%,#fff 100%); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b0b0b0',endColorstr='#ffffff',GradientType=1); padding: 5px; margin: 25px auto; color: #fff; text-align: center; font-weight: bold; font-size: 13px; font-size: 1.3rem; width: 100%; max-width: 830px; }
+ul.sponsor_listings {list-style: none; margin: 20px 0; padding: 0; text-align: center; }
+ul.sponsor_listings li {display: inline-block; vertical-align: middle; margin: 0 20px 20px 20px; }
+ul.sponsor_listings li img { width: 100%;}
+#contacts { border-top: 1px solid #bcbcbc; padding: 10px 0 20px 0; color: #888; }
+#contacts h3, #contacts p {font-size: 13px; font-size: 1.3rem; padding: 0; margin: 0; line-height: 16px; line-height: 1.6rem; }
+#contacts h3 { font-weight: bold; color: #888; }
+#contacts a {color: #888; }
+.spacer {height: 20px; }
+#sponsors ul {overflow: hidden; }
+#sponsors li:only-child {text-align: center; }
+#sponsors li:last-child:nth-child(odd) {text-align: center; }
+ul.sponsorList {text-align: center; margin: 0; padding: 0; }
+#sponsors ul li {width: 130px; display: inline-block; margin: 10px 15px; vertical-align: middle; }
+#sponsors h2 {color: #9A9A9A; text-align: center; margin-right: 0; font-weight: normal; padding-bottom: 4px; }
+#sponsors .sponsor_list_heading {background: #b0b0b0; background: -moz-linear-gradient(left,#fff 0,#b0b0b0 50%,#fff 100%); background: -webkit-gradient(linear,left top,right top,color-stop(0%,#fff),color-stop(50%,#b0b0b0),color-stop(100%,#fff)); background: -webkit-linear-gradient(left,#fff 0,#b0b0b0 50%,#fff 100%); background: -o-linear-gradient(left,#fff 0,#b0b0b0 50%,#fff 100%); background: -ms-linear-gradient(left,#fff 0,#b0b0b0 50%,#fff 100%); background: linear-gradient(to right,#fff 0,#b0b0b0 50%,#fff 100%); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b0b0b0',endColorstr='#ffffff',GradientType=1); padding: 5px; margin: 25px auto; color: #fff;  text-align: center; font-weight: bold; font-size: 13px; font-size: 1.3rem; width: 100%; max-width: 830px;}
+#sponsors .heading {color: #5f5f5f; margin: 5px 0; padding: 0; font-size: 14px; font-size: 1.4rem; font-weight: bold; line-height: 1.3em; }
+div.en_article_metadata {display: none; }
+#en_footerwrap {background: #000; width: 100%; min-height: 250px; margin: 0; overflow: auto; }
+#en_footer {padding: 5px 0 22px; font-weight: normal; font-size: 13px; font-size: 1.3rem; line-height: 1.3em; color: #fff;  margin: 0 auto; }
+#en_footer a {color: #fff; text-decoration: none; line-height: 1.4em; }
+#en_footer a:hover {text-decoration: underline; }
+#en_footer .copyright {font-size: 14px; font-size: 1.4rem; padding-top: 8px; }
+/*#en_footer #footer_logo {float: left; width: 188px; margin: 20px 20px 20px 0; }*/
+#en_footer .footercol {display: inline-block; /*width: 188px; */vertical-align: top; }
+#en_footer .footercol ul li:first-child {color: #00b7b7; }
+#en_footer ul {margin: 0; padding: 20px 0; list-style: none; }
+#en_footer ul li {list-style: none; padding: 0; margin: 0; line-height: 1.4em; font-size: 14px; font-size: 1.4rem; }
+.tk-open-sans{font-family:"open-sans",sans-serif;}.tk-oreilly-urw-typewriter-narro{font-family:"oreilly-urw-typewriter-narro",sans-serif;}
+.temp_email_cta { background-color: transparent; padding: 10px 0px 10px; }
+.chicklet {background-color: #000; background-image: url(http://cdn.oreillystatic.com/conferences/velocity/assets2012/social-buttons/social.png); background-repeat: no-repeat no-repeat; }
+#newsletter-popup-overlay {display: none; position: absolute; z-index: 200; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); background: none\9; }
+#newsletter-popup-overlay .popup {overflow: hidden; margin: 140px auto 0; margin: 14rem auto 0; background-color: #f9f9f9; text-align: center; max-width: 740px; max-width: 74rem; width: 70%; -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; -webkit-box-shadow: 0 0 15px rgba(0,0,0,0.3); -moz-box-shadow: 0 0 15px rgba(0,0,0,0.3); box-shadow: 0 0 15px rgba(0,0,0,0.3); border: 3px solid #ddd\9; }
+#newsletter-popup-overlay .popup .popup-header {background: #fff; padding: 10px 10px 15px; padding: 1rem 1rem 1.5rem; -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; -webkit-box-shadow: 0 0 15px rgba(0,0,0,0.3); -moz-box-shadow: 0 0 15px rgba(0,0,0,0.3); box-shadow: 0 0 15px rgba(0,0,0,0.3); }
+#newsletter-popup-overlay .popup .popup-header a.close {font-size: 16px; font-size: 1.6rem; line-height: 19px; line-height: 1.9rem; color: #999; display: block; padding-right: 24px; padding-right: 2.4rem; float: right; background: transparent url('http://cdn.oreilly.com/oreilly/images/close-icon-19x19.png') right 0 no-repeat; }
+#newsletter-popup-overlay .popup .popup-header a.close:hover {color: #666; text-decoration: none; background: transparent url('http://cdn.oreilly.com/oreilly/images/close-icon-19x19.png') right -100px no-repeat; }
+#newsletter-popup-overlay .popup .popup-header h3 {margin: 50px 13px 5px 13px; margin: 5rem 1.3rem 0.5rem 1.3rem; clear-both;padding: 0; font-size: 40px; font-size: 4rem; line-height: 44px; line-height: 4.4rem; font-weight: normal; }
+#newsletter-popup-overlay .popup .popup-header p {margin: 0 40px; margin: 0 4rem; padding: 0; font-size: 20px; font-size: 2rem; line-height: 28px; line-height: 2.8rem; font-weight: normal; }
+#newsletter-popup-overlay .popup-form {margin: 42px 23px 0; margin: 4.2rem 2.3rem 0; text-align: left; }
+#newsletter-popup-overlay #newsletter-popup-frame {display: block; border: none; padding: 0; margin: 0 auto; width: 450px; width: 45rem; height: 90px; height: 9rem; text-align: left; }
+
+#rightcol {
+    background: #fff url('//cdn.oreillystatic.com/en/assets/1/eventprovider/1/background_quote.gif') left top no-repeat;
+    padding: 24px 0 0 10px;
+    margin: 0 20px 17px 20px;
+    color: #b25000;
+    font-size: 1.8em;
+    line-height: 1.4em;
+}
+</style>
+
+<style>
+@media only screen and (max-width: 680px) {
+   #en_footer ul li { font-size: 13px; font-size: 1.3rem; line-height: 22px; line-height: 2.2rem; }
+}
+</style>
+
+
+<!--VWO-->
+<!-- Start Visual Website Optimizer Asynchronous Code -->
+<script type='text/javascript'>
+var _vwo_code=(function(){
+var account_id=30151,
+settings_tolerance=2000,
+library_tolerance=2500,
+use_existing_jquery=false,
+// DO NOT EDIT BELOW THIS LINE
+f=false,d=document;return{use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);this.load('//dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&r='+Math.random());var a=d.createElement('style'),b='body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);return settings_timer;}};}());_vwo_settings_timer=_vwo_code.init();
+</script>
+<!-- End Visual Website Optimizer Asynchronous Code -->
+
+<!--metadata-->
+<meta property="og:image" content="http://cdn.oreillystatic.com/en/assets/1/eventseries/26/fluent_web_platform_og200x200.gif"/>
+<meta name="twitter:image" content="http://cdn.oreillystatic.com/en/assets/1/eventseries/26/fluent_web_platform_og_twitter120x120.gif" />
+<meta name="twitter:site" content="@fluentconf" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" /> 
+
+
+
+
+<link rel="canonical" href="http://fluentconf.com//public/cfp/411" />
+<meta property="og:url" name="twitter:url" content="http://fluentconf.com//public/cfp/411" /> 
+<meta property="og:title" name="twitter:title" content="Fluent 2016 Call for Participation" />
+
+
+<meta property="og:description" name="twitter:description" content="Fluent is an annual conference dedicated to sharing knowledge on web technologies and showcasing how the Web Platform is transforming our industry. Do you have JavaScript, HTML5, design, back-end, ..." />
+<meta name="description" content="Fluent is an annual conference dedicated to sharing knowledge on web technologies and showcasing how the Web Platform is transforming our industry. Do you have JavaScript, HTML5, design, back-end, ..." /> 
+
+
+
+
+
+
+
+<!-- Chartbeat Head -->
+<script type="text/javascript">
+<!--
+// js/charbeat_head
+var _sf_startpt=(new Date()).getTime()
+-->
+</script>
+
+ 
+        
+
+
+
+  <!--[if lte IE 6]>
+  <script type="text/javascript" src="/javascripts/supersleight-min.js"></script>
+  <![endif]-->
+
+
+
+
+
+  
+  <link rel="icon" type="image/png" href="//cdn.oreillystatic.com/en/assets/1/eventseries/26/fluent_favicon.png">
+    
+
+
+
+
+
+<meta name="Category" content="Conferences" />
+
+
+<meta name="search_date" content="2016-03-08" />
+
+
+<meta name="search-conf-name" content="Fluent 2016" />
+<meta name="search-conf-url" content="http://fluentconf.com/" />
+
+
+<meta name="search-content" content="other"/>
+
+
+
+
+
+<!--for Google Webmaster Tools -->
+<meta name="verify-v1" content = "ejKlkisc2aaHXLk+37fMPNCfcsC5GdJYO2qoBXRRM7g=" />
+
+<!--
+<link rel="image_src" href="http://oreilly.com/images/oreilly/oreilly_large.gif" />
+-->
+
+
+
+
+<script type="text/javascript">
+window._umbel = window._umbel || [];
+(function()
+{ var u = document.createElement('script'); u.type = 'text/javascript'; u.async = true; u.src = document.location.protocol + '//tags.api.umbel.com/fnhibijmwrhmldyn/w.js?d=' + new Date().getMonth() + '' + new Date().getDate(); var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(u, s); }
+
+)();
+</script>
+<script>(function() {
+  var _fbq = window._fbq || (window._fbq = []);
+  if (!_fbq.loaded) {
+    var fbds = document.createElement('script');
+    fbds.async = true;
+    fbds.src = '//connect.facebook.net/en_US/fbds.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(fbds, s);
+    _fbq.loaded = true;
+  }
+  _fbq.push(['addPixelId', '306982702784529']);
+})();
+window._fbq = window._fbq || [];
+window._fbq.push(['track', 'PixelInitialized', {}]);
+</script>
+<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=306982702784529&amp;ev=PixelInitialized" /></noscript>
+
+
+
+</head>
+<body class='en_webpage en_c_content en_a_cfp' id='en_content_cfp'>
+
+<div id="en_content" itemscope itemtype="http://data-vocabulary.org/Event"><!-- closed in after_main-->
+<meta itemprop="startDate" datetime="2016-03-08T00:00-00:00" content="March  8, 2016" />
+<meta itemprop="endDate" datetime="2016-03-10T00:00-00:00" content="March 10, 2016"/>
+<meta itemprop="location" content="San Francisco, CA" />
+<meta itemprop="summary" content="Fluent 2016 Call for Participation - Fluent 2016" />
+
+<div id="en_main_parts"><!-- closed in after_main -->      
+<div id="nav_overlay" class="hide"></div>        
+  <div id="en_header">
+      
+      <div class="branding_bar">
+      <div class="content_row">
+        <div class="grid mobile-stack">
+        <a class="col-1-3" href="http://oreilly.com"><img id="logo" src="//cdn.oreillystatic.com/en/assets/1/eventprovider/1/orm_branding_bar_transparent_logo.png" alt="O'Reilly Media, Inc" width="100%" border="0" /></a>
+          </div><!--grid-->
+      </div><!-- div.content_row -->
+    </div><!-- div.branding_bar -->
+
+    <div id="inside_header" class="row">
+      <div class="content_row">
+        <div class="grid">
+        <div class="event_logo"><a href="/fluent-javascript-html-ca"><img src="//cdn.oreillystatic.com/en/assets/1/event/125/fluent2015_svg_logo.svg" width="283" height="77" alt="O'Reilly Fluent Conference" border="0" /></a></div>
+        <div class="tagline_date_location">
+          <div class="tagline">The Web Platform</div>
+          <div class="date_location">Training: March 7&ndash;8, 2016<br />Conference: March 8&ndash;10, 2016<br /> San Francisco, CA</div>
+        </div><!--div.date_location-->
+        </div><!--grid-->
+      </div>  <!-- div.content_row -->      
+    </div><!-- div#inside_header -->
+       <div id="sitenav">
+         <div class="content_row">
+           
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="navbar">
+<nav class="en_clearfix">
+<a href="/fluent-javascript-html-ca"><img src="//cdn.oreillystatic.com/en/assets/1/event/125/fluent2015_svg_logo.svg" alt="Fluent 2016" width="75%" border="0" style="max-width: 279px;"><span id="date_location_mobile"><span class="mobile_tagline">The Web Platform</span>Training: March 7&ndash;8, 2016<br /> Conference: March 8&ndash;10, 2016<br /> San&nbsp;Francisco,&nbsp;CA</span></a><a href="#" id="pull"></a>
+<ul class="clearfix">
+                        <li><a href="/fluent-javascript-html-ca/public/cfp/411">Proposals</a></li>           
+			<li><a href="/fluent-javascript-html-ca/public/content/sponsors">Sponsors</a></li>
+			<li><a href="/fluent-javascript-html-ca/public/content/about">About</a></li>
+			<li><a href="/fluent-javascript-html-ca/user/account">Account</a></li>
+		</ul>
+</nav>
+</div>
+         </div>
+       </div><!--#sitenav-->
+  </div><!-- //en_header -->
+     
+  <div id="en_body">
+    <div id="en_main">
+    
+    
+    
+
+
+    <iframe style="visibility:hidden;display:none"
+            src="/fluent-javascript-html-ca/user/account/notice_login_status">
+    </iframe>
+
+
+
+
+
+<script src="http://cdn.oreillystatic.com/oreilly/scripts/tzcount-2014.js"></script>
+<script>
+// Set tzcount
+var month = '0';  // '*' for next month, '0' for this month or 1 through 12 for the month
+var day = '22';  // Offset for day of month day or + day
+var hour = 0;  // 0 through 23 for the hours of the day
+var tz = '-7';  // Offset for your timezone in hours from UTC
+var lab = 'tzcd';  // The id of the element to display the countdown
+</script>
+<style>
+  /* Countdown Timer Styles */
+  #timer-container { background-color: #00b7b7; color: white; font-size: 35px; height: 40px; margin-top: 20px; }
+  #timer-container p { width: 410px; margin: 0 auto; line-height: 39px; font-size: 20px; }
+  #tzcd span { margin-right: 2px; }
+@media screen and (max-width: 600px) {
+  #timer-container p { font-size: 16px; font-size: 1.6rem; width: 300px; }
+}
+</style>
+
+
+
+
+        <div id="timer-container" style=""><p style="">Call for speakers closes in: <span id="tzcd"></span></p></div>
+        <h1>Fluent 2016 Call for Participation</h1>
+        
+
+	
+</b></p>
+
+
+	<p><a href="/fluent-javascript-html-ca/user/proposal/new/411" class='btn-yellow' style="width: 260px;">Submit a proposal</a></p>
+
+<p>Fluent is an annual conference dedicated to sharing knowledge on web technologies and showcasing how the Web Platform is transforming our industry. Do you have JavaScript, HTML5, design, back-end, performance, or security lessons, expertise, and experiences to share? We encourage you to send us a proposal to speak at Fluent 2016!</p>
+<p><strong>We&#8217;re interested in what it takes to build great projects for the Web:</strong></p>
+<div class="grid mobile-stack-cfp">
+<div class="col-1-2">
+<ul>
+      <li>Designing great interfaces and user experiences</li>
+      <li>Layering a full stack of web technologies</li>
+      <li>Application architectures, <span class="caps">MVC</span> and beyond</li>
+      <li>Graphics and visualization</li>
+      <li>Tools that simplify development</li>
+      <li>Modular approaches to JavaScript and Web Components</li>
+      <li>Reliability across platforms and devices</li>
+      <li>Evolution of ECMAScript, <span class="caps">CSS</span>, and <span class="caps">HTML</span></li>
+</ul>
+</div>
+<div class="col-1-2">
+<ul>
+      <li>Native, web, and packaging approaches</li>
+      <li>Back-end development with a variety of tools</li>
+      <li>Securing applications and data</li>
+      <li>Maintaining sites and applications over time</li>
+      <li>People issues; team and company organization</li>
+      <li>Hardware and the Web; the Internet of Things</li>
+      <li>Data processing and storage</li>
+</ul>
+</div>
+</div>
+<p><strong>Some of the specific tools we&#8217;re interested in are:</strong></p>
+<ul>
+  <li>Browsers</li>
+  <li>JavaScript frameworks (e.g. Angular, Ember, React, jQuery, Sencha)</li>
+  <li>Languages that compile to JavaScript (e.g. CoffeeScript, Dart, TypeScript)</li>
+  <li>Developer automation and testing tools (e.g. Gulp, Grunt, Jasmine)</li>
+  <li>Web services and APIs</li>
+  <li>Server-side tools (e.g. Node, npm, databases, Rails, <span class="caps">PHP</span>)</li>
+</ul>
+<p>Remember, what&#8217;s old to you may be new to someone else.  While we do want the latest and greatest, powerful explanations and stories on how to make things work better will appeal to a broad audience. With that said, we are also looking for a number of &#8220;brain busting&#8221; talks&#8212;information aimed squarely at the most advanced of users or presenting the most far out or progressive ideas and techniques.</p>
+<p>New to the speaking circuit? Never fear, we want to hear from you too! We&#8217;re actively seeking new voices and off-the-beaten-path topics to put on stage at Fluent. Any ideas, best practices, challenges, etc. that you&#8217;ve encountered and conquered are fair game&#8212;if it&#8217;s important to you, it&#8217;s important for others as well.</p>
+<p>The deadline for all proposals is 11:59pm <span class="caps">PST</span> on September 21, 2015. We&#8217;d love to hear what you&#8217;re working on and thinking about, so submit your proposal for a session or tutorial.</p>
+<p><strong>You&#8217;ll be asked to include the following information for your proposal:</strong></p>
+<ul>
+  <li>Proposed title</li>
+  <li>Overview and extended descriptions of the session</li>
+  <li>Audience level: beginners? pros? A wider range?</li>
+  <li>Suggested topic</li>
+  <li>Suggested tags</li>
+  <li>Speaker(s): biography and hi-res (1400&#215;1400) headshot</li>  
+  <li>Video (strongly encouraged)</li>
+  <li>Reimbursement needs for travel or other conference-related expenses (if you are self-employed, for example)</li>
+</ul>
+<p><strong>Proposals will be considered for the following types of sessions:</strong></p>
+<ul>
+  <li>30-minute sessions</li>
+  <li>90-minute tutorials</li>
+  <li>3-hour tutorials</li>
+</ul>
+<p>Once again in 2016, the core of the conference will be made up of 30-minute sessions. We&#8217;re looking for rich, focused talks that make the most of each of the 30 minutes. Because past attendees have asked for more interactivity, we&#8217;re building in time for brief Q&amp;A to follow each 30-minute session, and we will also have common areas where you can discuss things with attendees at a deeper level.</p>
+<h2 id="tips">Some tips for writing a good proposal for a good talk:</h2>
+<p>Help us understand why your presentation is the right one for Fluent.</p>
+<p><strong>Please keep in mind that this event is by and for professionals. All presentations and supporting materials must be respectful, inclusive, and adhere to our <a href="http://oreilly.com/conferences/code-of-conduct.html" class="external">Code of Conduct</a>.</strong></p>
+<ul>
+  <li>Be authentic! Your peers need original session ideas that focus real-world scenarios, relevant examples, and knowledge transfer.</li>
+  <li>Give your proposal a simple and straightforward title. Clever or inappropriate titles make it harder for people to figure out what you&#8217;re really talking about.</li>
+  <li>Include as much detail about the planned session as possible. The longer the talk you&#8217;re proposing, the more detail you should provide.</li>
+  <li>If you are proposing a panel, tell us who else would be on it.</li>
+  <li>Keep proposals free of marketing and sales.</li>
+  <li>If you are not the speaker, provide the contact information of the person you&#8217;re suggesting. We tend to ignore proposals submitted by PR agencies unless we can reach the suggested participant directly. Improve the proposal&#8217;s chances of being accepted by working closely with the presenter(s) to write a jargon-free proposal that contains clear value for attendees.</li>
+  <li>Keep the audience in mind: they&#8217;re professional, and already pretty smart.</li>
+  <li>Context is important. If your session is about something truly ground-breaking, it will be helpful to the reviewers if you describe it in terms of things that attendees might already know of.</li>
+  <li>Limit the scope of the talk: in 30 minutes, you won&#8217;t be able to cover Everything about Framework X. Instead, pick a useful aspect, or a particular technique, or walk through a simple program.</li>
+  <li>Explain why people will want to attend: is your topic gaining traction? Is it critical to modern business? Will attendees learn how to use it, program it, or just what it is?</li>
+  <li>Repeated talks from the conference circuit are less likely to be appealing. The conference has a limited number of slots, and if attendees can see the same talk somewhere else, why should they come see you at this one? If you speak at a lot of events, be sure to note why this session is different.</li>
+  <li>Don&#8217;t assume that your company&#8217;s name buys you credibility. If you&#8217;re talking about something important that you have specific knowledge of because of what your company does, spell that out in the description.</li>
+  <li>Let us know in your proposal notes whether you can give all the talks you submitted proposals for.</li>
+  <li>Does your session have the participation of a woman, person of color, or member of another group often underrepresented at tech conferences? <a href="http://oreilly.com/conferences/diversity.html" class="external">Diversity</a> is one of the factors we seriously consider when reviewing proposals as we seek to broaden our speaker roster.</li>
+  <li>We welcome sessions for attendees with a variety of skill levels. Consider proposing a number of different skill-level sessions, and please indicate the experience and knowledge level of the audience that you are targeting: novice, intermediate, or expert.</li>
+</ul>
+<h2 id="resources">Other resources to help you write your proposals:</h2>
+<ul>
+  <li><a href="http://oreilly.com/conferences/sample_proposals.html" class="external">Take a look at this handy proposals guide</a> that goes through examples of winning proposals, broken down by sessions types: Skills, Technology, Case Study, and Tutorials.</li>
+  <li><a href="/javascript-html-2015/public/schedule/grid/public" class="external">See the list of presentations chosen for the 2015 program</a>, and read their descriptions.</li>
+  <li><a href="https://www.youtube.com/playlist?list=PL055Epbe6d5ZqIHE7NA5f6Iq_bZNjuWvS" class="external">Watch video</a> and <a href="/javascript-html-2015/public/schedule/proceedings" class="external">view speaker slides</a> from Fluent 2015.</li>
+  <li>View Matthew McCullough&#8217;s session on <a href="http://www.youtube.com/watch?v=fJz4JJIchaY&amp;feature=youtu.be" class="external">10 Quick Tips for More Effective Conference Submissions and Presentations</a>.</li>
+  <li>View a <a href="http://www.youtube.com/watch?v=yE67bo7dmbY" class="external">Women Who Code panel discussion</a> on preparing for and speaking at technical conferences.</li>
+  <li>Download and read the free ebook, <a href="http://shop.oreilly.com/product/0636920027096.do" class="external">Propose, Prepare, Present</a>.</li>
+</ul>
+<h2>Important dates</h2>
+<ul>
+  <li>Call for speakers closes: <strong>September 21</strong></li>
+  <li>All proposers notified: <strong>by late October 2015</strong></li>
+  <li>Registration opens: <strong>October 2015</strong></li>
+</ul>
+<h2 id="conduct">Code of Conduct</h2>
+<p>We expect all participants, including speakers, to follow our <a href="http://oreilly.com/conferences/code-of-conduct.html" class="external">Code of Conduct</a>, the core of which is this: an O&#8217;Reilly conference should be a safe and productive environment for everyone. <a href="http://oreilly.com/conferences/code-of-conduct.html" class="external">Read more &raquo;</a></p>
+<p style="padding-top: 20px;"><a href="/fluent-javascript-html-ca/user/proposal/new/411" class="btn-yellow" style="width: 260px; text-decoration: none;">Create a proposal</a></p>
+
+
+
+    </div><!-- en_main -->
+
+  <style>#sponsors_contacts.row { border-top: 2px solid #cacaca; }</style>
+
+
+<div id="sponsors_contacts" class="row">
+<div id="sponsor_container">
+<!--sponsors title image-->
+<div class="spacer">&nbsp;</div>
+<div id="sponsors">
+<!--h2 style="font-size: 2.6em;">Sponsors</h2-->
+
+
+
+<div class="sponsor_list_heading">Gold Sponsors</div>
+<ul class="plain sponsorList"><li><a href="http://saucelabs.com" target="_blank"><img src="//cdn.oreillystatic.com/oreilly/images/transparent-1px.png" class="lazy" data-img-src="//cdn.oreillystatic.com/conferences/images/logos/saucelabs.gif" alt="Sauce Labs" width="120" height="45" border="0" /><span class="lazy_placeholder">Sauce Labs</span></a></li><li><a href="http://www.softlayer.com" target="_blank"><img src="//cdn.oreillystatic.com/oreilly/images/transparent-1px.png" class="lazy" data-img-src="//cdn.oreillystatic.com/conferences/images/logos/softlayer-ibm.png" alt="SoftLayer, an IBM Company" width="120" height="21" border="0" /><span class="lazy_placeholder">SoftLayer, an IBM Company</span></a></li></ul>
+
+<div class="sponsor_list_heading">Exhibitor</div>
+<ul class="plain sponsorList"><li><a href="http://www.codeschool.com" target="_blank"><img src="//cdn.oreillystatic.com/oreilly/images/transparent-1px.png" class="lazy" data-img-src="//cdn.oreillystatic.com/conferences/images/logos/codeschool-vertical.png" alt="Code School" width="120" height="68" border="0" /><span class="lazy_placeholder">Code School</span></a></li></ul>
+
+<div class="sponsor_list_heading">Innovators</div>
+<ul class="plain sponsorList"><li><a href="http://getsentry.com" target="_blank"><img src="//cdn.oreillystatic.com/oreilly/images/transparent-1px.png" class="lazy" data-img-src="//cdn.oreillystatic.com/conferences/images/logos/sentry.png" alt="Sentry" width="120" height="70" border="0" /><span class="lazy_placeholder">Sentry</span></a></li><li><a href="http://vaadin.com/" target="_blank"><img src="//cdn.oreillystatic.com/oreilly/images/transparent-1px.png" class="lazy" data-img-src="//cdn.oreillystatic.com/conferences/images/logos/vaadin.jpg" alt="Vaadin" width="120" height="29" border="0" /><span class="lazy_placeholder">Vaadin</span></a></li><li><a href="https://vividcortex.com/" target="_blank"><img src="//cdn.oreillystatic.com/oreilly/images/transparent-1px.png" class="lazy" data-img-src="//cdn.oreillystatic.com/conferences/images/logos/vivid_cortex.png" alt="VividCortex" width="103" height="100" border="0" /><span class="lazy_placeholder">VividCortex</span></a></li></ul>
+
+<div class="sponsor_list_heading">Community Partners</div>
+<ul class="plain sponsorList"><li><a href="www.cambridgeweb.ie" target="_blank"><img src="//cdn.oreillystatic.com/oreilly/images/transparent-1px.png" class="lazy" data-img-src="//cdn.oreillystatic.com/conferences/images/logos/cambridge-web.png" alt="Cambridge Web Design, Inc" width="120" height="19" border="0" /><span class="lazy_placeholder">Cambridge Web Design, Inc</span></a></li><li><a href="http://www.designersandgeeks.com/" target="_blank"><img src="//cdn.oreillystatic.com/oreilly/images/transparent-1px.png" class="lazy" data-img-src="//cdn.oreillystatic.com/conferences/images/logos/designers-geeks.png" alt="Designers + Geeks" width="120" height="42" border="0" /><span class="lazy_placeholder">Designers + Geeks</span></a></li><li><a href="http://www.echojs.com/" target="_blank"><img src="//cdn.oreillystatic.com/oreilly/images/transparent-1px.png" class="lazy" data-img-src="//cdn.oreillystatic.com/conferences/images/logos/echojs.gif" alt="Echo JS" width="100" height="100" border="0" /><span class="lazy_placeholder">Echo JS</span></a></li></ul>
+
+
+
+
+<div class="content_row">
+<div id="contacts" class="grid mobile-stack">
+<div class="col-1-3">
+<h3>Sponsorship Opportunities</h3>
+<p>For exhibition and sponsorship opportunities, contact Sharon Cordesse at <a href="mailto:scordesse@oreilly.com">scordesse@oreilly.com</a></p>
+</div>
+<div class="col-1-3">
+<h3>Partner Opportunities</h3>
+<p>For information on trade opportunities with O'Reilly conferences, email <a href="mailto:partners@oreilly.com">partners@oreilly.com</a></p>
+</div>
+<div class="col-1-3">
+<h3>Contact Us</h3>
+<p>View a complete list of <a href="/fluent-javascript-html-ca/public/content/contact">Fluent contacts</a></p>
+</div>
+</div><!-- /contacts -->
+</div><!--content_row-->
+</div><!-- /#sponsor_container -->
+</div><!--div#sponsors_contacts-->
+        
+            
+
+            <div id="en_footerwrap">
+                <div id="en_footer">
+                    <!-- system/theme/after_main -->
+                    
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="content_row">
+<div class="grid mobile-stack">
+<div id="footer_logo" class="col-1-4">
+     
+</div> <!-- div#footer_logo-->
+<div class="footercol col-1-5">
+    <ul>
+        <li><strong>Information</strong></li>
+        <li><a href="/fluent-javascript-html-ca/public/content/about">About</a></li>
+
+        <li><a href="/fluent-javascript-html-ca/public/cfp/411">Submit a Proposal</a></li>
+
+
+        <li><a href="/javascript-html-2015" target="_blank">Fluent 2015</a></li>
+        <li><a href="http://oreilly.com/conferences/diversity.html" target="_blank">Diversity</a></li>
+        <li><a href="http://oreilly.com/conferences/code-of-conduct.html" target="_blank">Code of Conduct</a></li>
+        <li><a href="http://oreilly.com/oreilly/privacy.html" target="_blank">Privacy Policy</a></li>
+    </ul>
+</div>
+
+<div class="footercol col-1-5">
+<ul>
+<li><strong>More O'Reilly Events</strong></li>
+<li><a href="http://strataconf.com/big-data-conference-ny-2015/public/content/cultivate" target="_blank">Cultivate</a></li>
+
+<li><a href="http://conferences.oreilly.com/next-economy/" target="_blank">Next:Economy</a></li>
+
+
+<li><a href="http://conferences.oreilly.com/next-money-fintech/" target="_blank">Next:Money</a></li>
+
+
+<li><a href="http://oscon.com" target="_blank">OSCON</a></li>
+
+
+<li><a href="http://solidcon.com/internet-of-things-2015" target="_blank">Solid Conference</a></li>
+
+
+<li><a href="http://strataconf.com/" target="_blank">Strata + Hadoop World</a></li>
+
+
+<li><a href="http://velocityconf.com/" target="_blank">Velocity Conference</a></li>
+
+
+
+<li><a href="http://conferences.oreilly.com/design-ux-interaction-iot" target="_blank">Design Conference</a></li>
+
+
+<li><a href="http://conferences.oreilly.com/software-architecture-ny" target="_blank">Software Architecture</a></li>
+
+</ul>
+</div>
+
+<div class="footercol col-1-5">
+<ul>
+<li><strong>More O'Reilly Sites</strong></li>
+<li><a href="http://conferences.oreilly.com" target="_blank">O'Reilly Conferences</a></li>
+<li><a href="http://oreilly.com" target="_blank">oreilly.com</a></li>
+<li><a href="http://radar.oreilly.com" target="_blank">O'Reilly Radar</a></li>
+<li><a href="http://oreilly.com/videos/" target="_blank">O'Reilly Video</a></li>
+<li><a href="http://oreilly.com/webcasts/" target="_blank">O'Reilly Webcasts</a></li>
+<li><a href="https://www.youtube.com/user/OreillyMedia" target="_blank">O'Reilly on YouTube</a></li>
+</ul>
+</div>
+
+<div class="footercol col-1-5">
+<ul class="social">
+  <li><a href="https://twitter.com/fluentconf" target="_blank"><img src="//cdn.oreillystatic.com/en/assets/1/event/127/solid2015_social_twitter.svg" alt="Twitter" width="32" height="32" border="0" />Twitter</a></li>
+  <li><a href="https://www.facebook.com/OReilly" target="_blank"><img src="//cdn.oreillystatic.com/en/assets/1/event/127/solid2015_social_facebook.svg" alt="Facebook"  width="32" height="32" border="0" />Facebook</a></li>
+  <li><a href="https://www.youtube.com/user/OreillyMedia" target="_blank"><img src="//cdn.oreillystatic.com/en/assets/1/event/127/solid2015_social_youtube.svg" alt="YouTube"  width="32" height="32" border="0" />YouTube</a></li>
+</ul>
+</div> 
+<div class="footercol col-1-5">
+<ul class="social">
+  <li><a href="https://plus.google.com/+oreillymedia/posts" target="_blank"><img src="//cdn.oreillystatic.com/en/assets/1/event/127/solid2015_social_google_plus.svg" alt="Google+"  width="32" height="32" border="0" />Google+</a></li>
+  <li><a href="https://www.linkedin.com/company/8459" target="_blank"><img src="//cdn.oreillystatic.com/en/assets/1/event/127/solid2015_social_linkedin.svg" alt="LinkedIn"  width="32" height="32" border="0" />LinkedIn</a></li>
+</ul>
+</div>
+
+</div><!--grid--> 
+</div><!--content_row-->
+                </div>
+            </div>
+       <div id="copyright">
+<div class="content_row">
+<p>&copy;2015, O'Reilly Media, Inc.&nbsp; &bull;&nbsp; (800) 889-8969 or (707) 827-7019&nbsp; &bull;&nbsp; Monday-Friday 7:30am-5pm PT&nbsp; &bull;&nbsp; All trademarks and registered trademarks appearing on oreilly.com are the property of their respective owners.&nbsp; &bull;&nbsp;  
+<a href="mailto:conf-webmaster@oreilly.com" class="webmaster">conf-webmaster@oreilly.com</a></p>
+</div>
+</div><!--div#copyright-->
+        </div><!-- div#en_body -->
+    </div><!-- en_main_parts -->
+    
+    
+</div><!-- en_content -->
+
+
+
+<script src="//cdn.oreillystatic.com/en/assets/1/eventprovider/1/lazyload_min_v3.js"></script>
+
+<script>
+//debounce function
+function debounce(a,b,c){var d;return function(){var e=this,f=arguments;clearTimeout(d),d=setTimeout(function(){d=null,c||a.apply(e,f)},b),c&&!d&&a.apply(e,f)}}
+
+$(function(){
+/* make links with class=external open up external */
+           $("a.external").click(function (e) {
+              e.preventDefault();
+              window.open($(this).attr("href"));
+           });
+
+         
+
+var viewport_width = Math.max( $(window).width(), window.innerWidth);
+
+       
+
+
+
+
+
+
+    $('#mid').find('p:eq(1)').children('a').addClass('btn-blue').css('width','13em');
+
+
+
+
+
+
+
+
+
+/* for responsive nav */	
+         var pull = $('#pull'),
+	       menu = $('nav ul'),
+               docHeight = $(document).height(),
+	       menuHeight = menu.height(),
+               regButton = $('#reg_button');
+               nav_overlay = $('#nav_overlay');
+			$(pull).on('click', function(e) {
+				e.preventDefault();
+				menu.toggle();
+                regButton.toggleClass('hide');
+                nav_overlay.toggleClass('hide');
+				docHeight = $(document).height();
+                nav_overlay.css('height', docHeight);
+            	return false;
+			});
+	
+	//resize functions
+	var runUniversalFunctions = debounce(function() {
+		var w = Math.max( $(window).width(), window.innerWidth);
+		if(w > 320 && menu.is(':hidden')) {
+			menu.removeAttr('style');                               
+		} 
+	    
+	   if(w > 680) {  
+	            regButton.addClass('hide'); 
+	            nav_overlay.addClass('hide'); 
+	           
+	    } else {
+	            if($('nav ul.clearfix').is(':hidden') === false) { 
+	               regButton.removeClass('hide'); 
+	               nav_overlay.removeClass('hide'); 
+	            } else {
+	               //$('nav ul.clearfix').addClass('hide');
+	            }
+	    }   
+    }, 250);  
+    window.addEventListener('resize', runUniversalFunctions);
+	
+});//function wrapper
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+<script language="javascript" type="text/javascript">
+<!--
+    // Initialize Banners
+    $( function () {
+             if ($('div.banners').length) {
+              $( ".banners" ).each( function ( i, e ) {
+                      var banners = new Array();
+                      $( e ).find( 'img' ).each( function( i0, e0 ) {
+                              banners.push( $( e0 ) );
+                          });
+                      
+                      var b = banners[ Math.floor( Math.random() * banners.length ) ];
+                     b.attr( 'class', 'lazy' );
+                     b.css('height', 'auto');
+                      
+                  });
+               $('.banners > a > img').each(function() { 	       
+                  if ($(this).height() === 0) {
+		    $(this).parent().css('display', 'none');
+	          }
+                });
+             }//endif
+        });
+//-->
+</script>
+
+
+
+
+
+
+
+
+
+ 
+
+<!-- site catalyst -->
+<!--Fluent 2016 Call for Participation -->
+
+<script language="JavaScript" type="text/javascript">
+<!--
+// var localScAcct = "orfluentdev";
+var localScAcct = "orfluent"; 
+//!-->
+</script>
+
+<script language="JavaScript" type="text/javascript">
+<!--//
+ /* Specify the Report Suite ID(s) to track here */ 
+/* localScAcct is specified in content/scripts/sitecatalyst_cfg */
+//var globalScAcct = "ororeillyglobaldev";
+var globalScAcct = "orglobal";
+
+var s_account = localScAcct + "," + globalScAcct;
+/*s_code.js must be called via the current protocol to avoid mixed content warnings */
+var s_code_protocol;
+var s_code_url = "cdn.oreillystatic.com/assets/js/s_code.js";
+if (window.location.protocol == "https:"){
+document.write('<script id="s_code_script" type="text/javascript" src="https://' + 'cdn.oreillystatic.com/assets/js/s_code.js' + '"><' + '/script>');
+}else{
+document.write('<script id="s_code_script" type="text/javascript" src="http://' + 'cdn.oreillystatic.com/assets/js/s_code.js' + '"><' +'/script>');
+}
+//!-->
+</script>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+var myChannel, myPageName, myTitle, mySeries, myEvent, myEventTitle, mySection, mySection2, mySection3, myLoggedStatus,myEventPhase,localScAcct,myPubDate,mySystemPageType;
+
+if(typeof(myTitleAppend) == 'undefined')
+var myTitleAppend = "";
+else myTitleAppend = ": " + myTitleAppend;
+
+myChannel = "confs";
+
+myTitle       = "fluent 2016 call for participation" + myTitleAppend;
+
+
+mySection   = new Array(myChannel);
+mySeries = "radar-summit";
+
+mySection.push(mySeries);
+mySection2 = mySection.slice(); 
+
+
+
+var myEventStartDate = new Date ("March 08, 2016");
+var today            = new Date();
+if (today > myEventStartDate){
+     myEventPhase = "post-conference";
+}
+ myPubDate = "03/08/2016"; 
+myEventTitle = "Fluent 2016";
+
+myEvent      = "fluent2016"
+mySection2.push(myEvent)
+
+mySection3 = mySection2.slice(); 
+mySystemPageType = "cfp";
+
+
+mySection3.push(mySystemPageType)
+myPageName   = myChannel + ":" + myEvent + " " + myTitle;
+mySection    = mySection.join(":");
+mySection2   = mySection2.join(":");
+mySection3   = mySection3.join(":");
+
+myLoggedStatus = "logged out";
+
+/* You may give each page an identifying name, server, and channel on
+the next lines..... */
+s.pageName = myPageName.toLowerCase(); 
+//s.server   = ""; OK TO DELETE THIS LINE?
+s.channel  = myChannel;
+//s.pageType = "";OK TO DELETE THIS LINE?
+s.prop1  = mySection;
+s.prop2  = mySection2;
+s.prop3  = mySection3;
+s.prop4  = mySystemPageType; //not using this currently
+s.prop5  = myTitle;
+s.prop7  = myPubDate;
+s.prop15 = s.eVar24 = myLoggedStatus;
+/*s.prop29 = myEventPhase;*/ //this has more work to do.
+s.prop38 = myEventTitle;
+
+/* Conversion Variables */
+s.campaign="";
+s.state="";
+s.zip="";
+s.events="";  // need way to distinguish amongst these
+s.products="";     // only put products on for purchases.
+s.purchaseID="";
+s.eVar1="";
+s.eVar2="";
+s.eVar3="";
+s.eVar4="";
+s.eVar5="";
+
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+var s_code=s.t();if(s_code)document.write(s_code)//--></script>
+<script language="JavaScript" type="text/javascript"><!--
+if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+//--></script><noscript><a href="http://www.omniture.com" title="Web Analytics"><img
+src="http://ororeillyglobaldev.122.2O7.net/b/ss/ororeillyglobaldev/1/H.20.2--NS/0"
+height="1" width="1" border="0" alt="" /></a></noscript><!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.20.2. -->
+
+<!-- crazy egg heatmap -->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script"); var b=document.getElementsByTagName('script')[0]; a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0011/6381.js?"+Math.floor(new Date().getTime()/3600000); a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+
+<!-- google analytics -->
+<script type="text/javascript">
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-3144621-36']);
+_gaq.push(['_setSiteSpeedSampleRate', 50]);
+_gaq.push(['_trackPageview']);
+
+(function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();
+
+</script>
+
+<!-- js/chartbeat_footer --> 
+<script type="text/javascript">
+	var _sf_async_config={uid:1632,domain:"conferences.oreilly.com"};
+	(function(){
+		function loadChartbeat() {
+			window._sf_endpt=(new Date()).getTime();
+			var e = document.createElement('script');
+			e.setAttribute('language', 'javascript');
+			e.setAttribute('type', 'text/javascript');
+			e.setAttribute('src',
+			(("https:" == document.location.protocol) ? "https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/" : "http://static.chartbeat.com/") +
+			"js/chartbeat.js");
+			document.body.appendChild(e);
+		}
+		
+		var oldonload = window.onload;
+		window.onload = (typeof window.onload != 'function') ?
+		loadChartbeat : function() { oldonload(); loadChartbeat(); };
+	})();
+</script>
+
+
+</body>
+</html>

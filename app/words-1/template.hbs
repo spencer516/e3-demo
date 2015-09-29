@@ -1,0 +1,21 @@
+{{input
+  type="text"
+  value=text
+  key-up=(action updateText)
+  autocomplete='off'}}
+
+<table>
+  <tr>
+    <th>CHAR</th>
+    <th>TOTAL</th>
+  </tr>
+  {{#each characters key='character' as |char|}}
+    <tr>
+      <td>{{char.character}}</td>
+      <td>{{char.total}}</td>
+    </tr>
+  {{/each}}
+</table>
+
+
+
