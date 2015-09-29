@@ -1,0 +1,53 @@
+<h1>This is a thing.</h1>
+<button {{action 'change'}}>
+  Change the thing.
+</button>
+<br>
+{{#e3-container type='svg' height=500 width=800 as |stage meta|}}
+  <metadata>
+    {{e3-scale/ordinal stage 'x'
+      range=stage.horizontalRange
+      domain=(e3-unique model key='dayOfWeek')
+      outerPadding=20
+    }}
+
+    {{e3-scale/linear stage 'y'
+      range=stage.verticalRange
+      domain=(e3-extent model key='value' padding=0.2)
+    }}
+
+    {{e3-scale/linear stage 'radius'
+      range=(e3-fixed-range min=5 max=10)
+      domain=(e3-extent model key='salamis')
+    }}
+  </metadata>
+
+  {{#each model as |thing|}}
+    {{e3-shape/circle stage
+      data=thing
+      x=(e3-bind-scale meta.scales.x 'dayOfWeek')
+      y=(e3-bind-scale meta.scales.y 'value')
+      radius=(e3-bind-scale meta.scales.radius 'salamis')
+      fill='red'
+    }}
+  {{/each}}
+
+  {{e3-shape/path stage
+    data=(average-maker model)
+    x=(e3-bind-scale meta.scales.x 'dayOfWeek')
+    y=(e3-bind-scale meta.scales.y 'value')
+    stroke='blue'
+    interpolation='monotone'
+  }}
+
+{{/e3-container}}
+
+{{!-- <table>
+  {{#each model as |thing|}}
+    <tr>
+      <td>{{thing.dayOfWeek}}</td>
+      <td>{{thing.value}}</td>
+    </tr>
+  {{/each}}
+</table>
+ --}}
